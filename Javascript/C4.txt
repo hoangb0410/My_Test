@@ -1,0 +1,19 @@
+CREATE TABLE Employee (
+    employee_id INT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    salary DECIMAL(10, 2) NOT NULL
+);
+
+CREATE TABLE Department (
+    department_id INT PRIMARY KEY,
+    department_name VARCHAR(100) UNIQUE NOT NULL
+);
+
+CREATE TABLE Employee_Department (
+    employee_id INT,
+    department_id INT,
+    PRIMARY KEY (employee_id, department_id),
+    FOREIGN KEY (employee_id) REFERENCES Employee(employee_id),
+    FOREIGN KEY (department_id) REFERENCES Department(department_id)
+);

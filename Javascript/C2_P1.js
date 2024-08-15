@@ -1,0 +1,31 @@
+let SBC = [50, 20, 40, 22, 39, 23, 35, 25, 30, 28];
+let BS = [30, 31, 32, 33, 34, 35, 36, 37, 38, 39];
+let BP = [40, 41, 37, 43, 44, 45, 46, 33, 48, 49];
+
+// Hàm tính số lượng tuổi bị trùng:
+function sameAge(array1, array2) {
+  let count = 0;
+  for (let i = 0; i < array1.length; i++)
+    for (let j = 0; j < array2.length; j++) {
+      if (array1[i] == array2[j]) count++;
+    }
+  return count;
+}
+// Vì các mảng là mảng unique nên nếu có trùng thì chỉ có tối đa 2 người trùng tuổi nhau với 1 tuổi nhất định.
+// => số người trùng tuổi = số lượng tuổi bị trùng * 2
+console.log(
+  "Số người trùng tuổi nhau giữa 2 bộ phận BS và BP:",
+  sameAge(BS, BP) * 2,
+  "người"
+); // 2 người 33 tuổi, 2 người 37 tuổi
+console.log(
+  "Số người trùng tuổi nhau giữa 2 bộ phận SBC và BS:",
+  sameAge(SBC, BS) * 2,
+  "người"
+); // 2 người 30 tuổi, 2 người 35 tuổi, 2 người 39 tuổi
+console.log(
+  "Số người trùng tuổi nhau giữa 2 bộ phận SBC và BP:",
+  sameAge(SBC, BP) * 2,
+  "người"
+); // 2 người 40 tuổi
+
