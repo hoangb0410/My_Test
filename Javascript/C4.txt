@@ -20,7 +20,7 @@ CREATE TABLE Employee_Department (
 
 
 # Thêm data
-INSERT INTO Employee (employee_id, name, age, salary) VALUES
+INSERT INTO Employee (employee_id, employee_name, age, salary) VALUES
 (1, 'Nguyen Van A', 30, 60000.00),
 (2, 'Tran Thi B', 25, 55000.00),
 (3, 'Tran Thi C', 24, 80000.00),
@@ -44,14 +44,14 @@ INSERT INTO Employee_Department (employee_id, department_id) VALUES
 
 
 # Thống kê lương của các thành viên
-SELECT e.name, e.salary, d.department_name
+SELECT e.employee_name, e.salary, d.department_name
 FROM Employee e
 JOIN Employee_Department ed ON e.employee_id = ed.employee_id
 JOIN Department d ON ed.department_id = d.department_id;
 
 
 # Thành viên có mức lương cao nhất theo từng bộ phận
-SELECT e.name, e.salary, d.department_name
+SELECT d.department_name, e.employee_name, e.salary
 FROM Employee e
 JOIN Employee_Department ed ON e.employee_id = ed.employee_id
 JOIN Department d ON ed.department_id = d.department_id
