@@ -1,6 +1,6 @@
 CREATE TABLE Employee (
     employee_id INT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
+    employee_name VARCHAR(100) NOT NULL,
     age INT NOT NULL,
     salary DECIMAL(10, 2) NOT NULL
 );
